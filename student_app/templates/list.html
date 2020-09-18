@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="float-right mb-2"><a class="btn btn-primary" href="/add">New</a></div>
+        <h3>List of Students</h3>
+        <table class="table table-hover" id="dlt">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Grade</th>
+                        <th>Faculty</th>
+                        <th>Section</th>
+                        <th>Roll_no</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Parent_name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{student.id_}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.grade}}</td>
+                        <td>{{student.faculty}}</td>
+                        <td>
+                            
+                                {{ student.section }}
+                            
+                        </td>
+                        <td>{{student.roll_no}}</td>
+                        <td>{{student.age}}</td>
+                        <td>
+                            
+                                {{ student.gender }}
+                            
+                        </td>
+                        <td>{{student.address}}</td>
+                        <td>{{student.parent_name}}</td>
+                        <td>
+                            <a class="btn btn-primary" href="/edit/{{student.id_}}">Edit</a>
+                            <a class="btn btn-primary" href="/delete/{{student.id_}}">X</a>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</body>
+<script>
+
+
+     
+</script>
+</html>
